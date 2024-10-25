@@ -16,7 +16,7 @@ public class SpringBatchConceptApplication {
 		SpringApplication.run(SpringBatchConceptApplication.class, args);
 	}
 
-	@Bean
+	//@Bean
 	ApplicationRunner applicationRunner(JobLauncher jobLauncher,
 										ApplicationContext context) {
 		return args -> {
