@@ -6,6 +6,7 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -17,8 +18,9 @@ public class SpringBatchConceptApplication {
 
 	@Bean
 	ApplicationRunner applicationRunner(JobLauncher jobLauncher,
-										Job job) {
+										ApplicationContext context) {
 		return args -> {
+			final var job = context.getBean("filePollingJob", Job.class);
 			jobLauncher.run(job, new JobParameters());
 		};
 	}
