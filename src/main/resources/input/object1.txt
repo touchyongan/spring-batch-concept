@@ -1,0 +1,7 @@
+id,field1
+OBJ_0001,some value1
+OBJ_0002,some value2
+OBJ_0003,some value3
+OBJ_0004,some value4
+OBJ_0005,some value5
+OBJ_0006,some value6

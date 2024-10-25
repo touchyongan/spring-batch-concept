@@ -72,6 +72,7 @@ public class ImportProductBatchConfig {
         return new ProductJdbcItemWriter(dataSource);
     }
 
+    // late binding
     @StepScope
     @Bean
     public FlatFileItemReader<Product> reader(@Value("file:#{jobParameters[targetDirectory]+jobParameters['targetFile']}") Resource resource) {
